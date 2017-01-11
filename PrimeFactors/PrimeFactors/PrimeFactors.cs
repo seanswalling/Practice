@@ -11,12 +11,20 @@ namespace PrimeFactors
     {
         internal static List<int> Generate(int n)
         {
-            List<int> Primes = new List<int>();
+            List<int> primes = new List<int>();
             if (n > 1)
             {
-                Primes.Add(n);
+                if (n % 2 == 0)
+                {
+                    primes.Add(2);
+                    n /= 2;
+                }
+                if (n > 1)
+                {
+                    primes.Add(n);
+                }
             }
-            return Primes;
+            return primes;
         }
     }
 }
