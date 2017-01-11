@@ -50,6 +50,12 @@ namespace PrimeFactors
         {
             Assert.AreEqual(List(2,3), PrimeFactors.Generate(6));
         }
+
+        [Test]
+        public void TestEight()
+        {
+            Assert.AreEqual(List(2,2,2), PrimeFactors.Generate(8));
+        }
     }
 
 }
