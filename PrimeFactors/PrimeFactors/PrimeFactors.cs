@@ -12,17 +12,19 @@ namespace PrimeFactors
         internal static List<int> Generate(int n)
         {
             List<int> primes = new List<int>();
+            int candidate = 2;
+            while (n > 1)
+            {
+                while (n % candidate == 0)
+                {
+                    primes.Add(candidate);
+                    n /= candidate;
+                }
+                candidate++;
+            }
             if (n > 1)
             {
-                while (n % 2 == 0)
-                {
-                    primes.Add(2);
-                    n /= 2;
-                }
-                if (n > 1)
-                {
-                    primes.Add(n);
-                }
+                primes.Add(n);
             }
             return primes;
         }
