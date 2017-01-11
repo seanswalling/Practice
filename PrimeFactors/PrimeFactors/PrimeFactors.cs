@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimeFactors
 {
-    public class Class1
+    public class PrimeFactors
     {
     }
 }
