@@ -10,6 +10,10 @@ namespace BowlingGame
     [TestFixture]
     class BowlingGameTest
     {
-        Game g = new Game();
+        [Test]
+        public void testGutterGame()
+        {
+            Game g = new Game();
+        }
     }
 }
