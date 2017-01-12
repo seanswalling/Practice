@@ -11,9 +11,25 @@ namespace BowlingGame
     class BowlingGameTest
     {
         [Test]
-        public void testGutterGame()
+        public void TestGutterGame()
         {
-            Game g = new Game();
+            var g = new Game();
+            for (var i = 0; i < 20; i++)
+            {
+                g.roll(0);
+            }
+            Assert.AreEqual(0, g.score());
+        }
+
+        [Test]
+        public void TestAllOnes()
+        {
+            var g = new Game();
+            for (var i = 0; i < 20; i++)
+            {
+                g.roll(1);
+            }
+            Assert.AreEqual(20, g.score());
         }
     }
 }
