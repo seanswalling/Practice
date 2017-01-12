@@ -16,9 +16,9 @@ namespace BowlingGame
             var g = new Game();
             for (var i = 0; i < 20; i++)
             {
-                g.roll(0);
+                g.Roll(0);
             }
-            Assert.AreEqual(0, g.score());
+            Assert.AreEqual(0, g.Score());
         }
 
         [Test]
@@ -27,9 +27,9 @@ namespace BowlingGame
             var g = new Game();
             for (var i = 0; i < 20; i++)
             {
-                g.roll(1);
+                g.Roll(1);
             }
-            Assert.AreEqual(20, g.score());
+            Assert.AreEqual(20, g.Score());
         }
     }
 }
