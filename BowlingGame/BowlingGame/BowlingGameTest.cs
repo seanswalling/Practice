@@ -1,79 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace BowlingGame
 {
     [TestFixture]
-    class BowlingGameTest
+    internal class BowlingGameTest
     {
-        private Game g;
+        private Game _g;
         [SetUp]
         protected void SetUp()
         {
-            g = new Game();
+            _g = new Game();
         }
 
         [Test]
         public void TestGutterGame()
         {
             RollMany(20, 0);
-            Assert.AreEqual(0, g.Score());
+            Assert.AreEqual(0, _g.Score());
         }
 
         [Test]
         public void TestAllOnes()
         {
             RollMany(20, 1);
-            Assert.AreEqual(20, g.Score());
+            Assert.AreEqual(20, _g.Score());
         }
 
         [Test]
         public void TestOneSpare()
         {
             RollSpare();
-            g.Roll(3);
+            _g.Roll(3);
             RollMany(17, 0);
-            Assert.AreEqual(16, g.Score());
+            Assert.AreEqual(16, _g.Score());
         }
 
         [Test]
         public void TestOneStrike()
         {
             RollStrike();
-            g.Roll(3);
-            g.Roll(4);
+            _g.Roll(3);
+            _g.Roll(4);
             RollMany(16, 0);
-            Assert.AreEqual(24, g.Score());
+            Assert.AreEqual(24, _g.Score());
         }
 
         [Test]
         public void TestPerfectGame()
         {
             RollMany(12, 10);
-            Assert.AreEqual(300, g.Score());    
+            Assert.AreEqual(300, _g.Score());    
         }
 
         private void RollMany(int rolls, int pins)
         {
             for (var i = 0; i < rolls; i++)
             {
-                g.Roll(pins);
+                _g.Roll(pins);
             }
         }
 
         private void RollSpare()
         {
-            g.Roll(5);
-            g.Roll(5);
+            _g.Roll(5);
+            _g.Roll(5);
         }
 
         private void RollStrike()
         {
-            g.Roll(10);
+            _g.Roll(10);
         }
     }
 }

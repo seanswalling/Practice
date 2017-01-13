@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BowlingGame
 {
-    class Game
+    internal class Game
     {
-        private int[] _rolls = new int[21];
-        private int _currentRoll = 0;
+        private readonly int[] _rolls = new int[21];
+        private int _currentRoll;
         public void Roll(int pins)
         {
             _rolls[_currentRoll++] = pins;
